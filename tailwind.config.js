@@ -18,7 +18,15 @@ export default {
 					850: 'var(--color-gray-850, #262626)',
 					900: 'var(--color-gray-900, #171717)',
 					950: 'var(--color-gray-950, #0d0d0d)'
-				}
+				},
+				'my-new-theme': {
+					800: '#1a237e',
+					850: '#283593',
+					900: '#3949ab',
+					950: '#5c6bc0'
+				},
+				sidebar: '#1a237e',
+				'sidebar-text': '#ffffff'
 			},
 			typography: {
 				DEFAULT: {

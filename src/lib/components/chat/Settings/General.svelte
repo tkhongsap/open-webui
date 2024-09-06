@@ -14,7 +14,7 @@
 	export let getModels: Function;
 
 	// General
-	let themes = ['dark', 'light', 'rose-pine dark', 'rose-pine-dawn light', 'oled-dark'];
+	let themes = ['dark', 'light', 'rose-pine dark', 'rose-pine-dawn light', 'oled-dark', 'my-new-theme'];
 	let selectedTheme = 'system';
 
 	let languages: Awaited<ReturnType<typeof getLanguages>> = [];
@@ -100,6 +100,11 @@
 			document.documentElement.style.setProperty('--color-gray-850', '#262626');
 			document.documentElement.style.setProperty('--color-gray-900', '#171717');
 			document.documentElement.style.setProperty('--color-gray-950', '#0d0d0d');
+		} else if (themeToApply === 'my-new-theme') {
+			document.documentElement.style.setProperty('--color-gray-800', '#1a237e');
+			document.documentElement.style.setProperty('--color-gray-850', '#283593');
+			document.documentElement.style.setProperty('--color-gray-900', '#3949ab');
+			document.documentElement.style.setProperty('--color-gray-950', '#5c6bc0');
 		}
 
 		themes
@@ -126,6 +131,8 @@
 			document.documentElement.style.setProperty('--color-gray-900', '#000000');
 			document.documentElement.style.setProperty('--color-gray-950', '#000000');
 			document.documentElement.classList.add('dark');
+		} else if (_theme === 'dark' || _theme === 'system') {
+			document.documentElement.classList.add('dark');
 		}
 		applyTheme(_theme);
 	};
@@ -150,6 +157,7 @@
 						<option value="oled-dark">🌃 {$i18n.t('OLED Dark')}</option>
 						<option value="light">☀️ {$i18n.t('Light')}</option>
 						<option value="her">🌷 Her</option>
+						<option value="my-new-theme">🌟 My New Theme</option>
 						<!-- <option value="rose-pine dark">🪻 {$i18n.t('Rosé Pine')}</option>
 						<option value="rose-pine-dawn light">🌷 {$i18n.t('Rosé Pine Dawn')}</option> -->
 					</select>
@@ -285,7 +293,7 @@
                             class="w-4 h-4 self-center"
                         >
                             <path
-                                d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM10 7a3 3 0 100 6 3 3 0 000-6zM15.657 5.404a.75.75 0 10-1.06-1.06l-1.061 1.06a.75.75 0 001.06 1.06l1.06-1.06zM6.464 14.596a.75.75 0 10-1.06-1.06l-1.06 1.06a.75.75 0 001.06 1.06l1.06-1.06zM18 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0118 10zM5 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 015 10zM14.596 15.657a.75.75 0 001.06-1.06l-1.06-1.061a.75.75 0 10-1.06 1.06l1.06 1.06zM5.404 6.464a.75.75 0 001.06-1.06l-1.06-1.06a.75.75 0 10-1.061 1.06l1.06 1.06z"
+                                d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM10 7a3 3 0 100 6 3 3 0 000-6zM15.657 5.404a.75.75 0 10-1.06-1.06l-1.061 1.06a.75.75 0 001.06 1.06l1.06-1.06zM6.464 14.596a.75.75 0 10-1.06-1.06l-1.06 1.06a.75.75 0 001.06 1.06l1.06-1.06z"
                             />
                         </svg> -->
 								<span class="ml-2 self-center"> {$i18n.t('JSON')} </span>

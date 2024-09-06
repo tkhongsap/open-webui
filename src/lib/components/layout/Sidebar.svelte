@@ -257,13 +257,12 @@
 {/if}
 
 <div
-	bind:this={navElement}
-	id="sidebar"
-	class="h-screen max-h-[100dvh] min-h-screen select-none {$showSidebar
-		? 'md:relative w-[260px]'
-		: '-translate-x-[260px] w-[0px]'} bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-200 text-sm transition fixed z-50 top-0 left-0 rounded-r-2xl
-        "
-	data-state={$showSidebar}
+    bind:this={navElement}
+    id="sidebar"
+    class="sidebar h-screen max-h-[100dvh] min-h-screen select-none {$showSidebar
+        ? 'md:relative w-[260px]'
+        : '-translate-x-[260px] w-[0px]'} text-sm transition fixed z-50 top-0 left-0 rounded-r-2xl"
+    data-state={$showSidebar}
 >
 	<div
 		class="py-2.5 my-auto flex flex-col justify-between h-screen max-h-[100dvh] w-[260px] z-50 {$showSidebar
@@ -587,12 +586,31 @@
 </div>
 
 <style>
-	.scrollbar-hidden:active::-webkit-scrollbar-thumb,
-	.scrollbar-hidden:focus::-webkit-scrollbar-thumb,
-	.scrollbar-hidden:hover::-webkit-scrollbar-thumb {
-		visibility: visible;
-	}
-	.scrollbar-hidden::-webkit-scrollbar-thumb {
-		visibility: hidden;
-	}
+    .scrollbar-hidden:active::-webkit-scrollbar-thumb,
+    .scrollbar-hidden:focus::-webkit-scrollbar-thumb,
+    .scrollbar-hidden:hover::-webkit-scrollbar-thumb {
+        visibility: visible;
+    }
+    .scrollbar-hidden::-webkit-scrollbar-thumb {
+        visibility: hidden;
+    }
+
+    :global(.sidebar) {
+        background-color: #1a237e !important;
+    }
+
+    :global(.sidebar),
+    :global(.sidebar *) {
+        color: #ffffff !important;
+    }
+
+    :global(.sidebar svg),
+    :global(.sidebar path) {
+        fill: #ffffff !important;
+    }
+
+    :global(.sidebar .text-gray-500),
+    :global(.sidebar .dark\:text-gray-500) {
+        color: #ffffff !important;
+    }
 </style>
